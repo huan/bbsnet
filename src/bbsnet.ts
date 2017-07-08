@@ -26,14 +26,14 @@ function showQrcode(qrcode) {
 }
 
 
-export async function bbsnet(): Promise<void> {
+export async function bbsnet(port = 23): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     const BOT_QRCODE_URL = 'http://u.wechat.com/MHLA4PnEeSKo9H__-klZUkE'
 
     generate(BOT_QRCODE_URL, qrcode => {
       const server = net.createServer(showQrcode(qrcode))
-      console.log('bbsnet.listening...')
-      server.listen(23, resolve)
+      console.log(`bbsnet listening on port ${port}...`)
+      server.listen(port, resolve)
     })
 
   })
