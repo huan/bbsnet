@@ -1,4 +1,5 @@
 import { log }    from 'brolog'
+log.timestamp(false)  // do not show timestamp in brolog
 
 import { bbsnet } from './src/bbsnet'
 import { web }    from './src/web'
