@@ -1,10 +1,23 @@
+import { log }   from 'brolog'
 import * as express from 'express'
 
-export async function web(): Promise<void> {
-  const app = express()
 
-  app.get('/', function (req, res) {
-    res.send(`
+function logger(
+  req: express.Request, 
+  res: express.Response, 
+  next: express.NextFunction,
+) {
+  log.info('web', '%s %s', req.method, req.url)
+  next()
+}
+
+
+function showHtml(
+  req: express.Request, 
+  res: express.Response, 
+  next: express.NextFunction,
+) {
+  res.write(`
 
   <!DOCTYPE html>
   <html lang="en">
@@ -31,11 +44,26 @@ export async function web(): Promise<void> {
     </body>
   </html>
 
-    \n`)
-  })
+  \n`)
+  
+  res.end()
+
+  next()
+}
+
+
+export async function web(): Promise<void> {
+  const app = express()
+
+  app.use(logger)
+  app.use(showHtml)
+
+  // app.get('/', function (req, res) {
+  //   res.send()
+  // })
 
   return new Promise<void>((resolve, reject) => {
-    console.log('app.listening...')
+    log.info('web', 'listening...')
     app.listen(80, resolve)
   })
 }
