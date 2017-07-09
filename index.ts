@@ -4,12 +4,26 @@ import { bbsnet } from './src/bbsnet'
 import { web }    from './src/web'
 
 
-async function main(): Promise<void> {
+function registerSignals() {
+  ;[
+    'SIGUSR1',
+    'SIGINT',
+    'SIGTERM',
+    'SIGPIPE',
+    'SIGHUP',
+    'SIGBREAK',
+    'SIGWINCH',
+  ].map((sigName: NodeJS.Signals) => {
+    process.on(sigName, function(){
+      log.info('main', 'Received signal %s', sigName)
+      process.exit(1)
+    })
+  });
+}
 
-  process.on('SIGINT', function () {
-    log.info('main', 'SIGINT received. exiting...')
-    process.exit(1)
-  })
+
+async function main(): Promise<void> {
+  registerSignals()
 
   try {
     await Promise.all([
@@ -22,5 +36,6 @@ async function main(): Promise<void> {
     log.error('main', e.message || e)
   }
 }
+
 
 main()
