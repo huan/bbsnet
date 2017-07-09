@@ -23,7 +23,7 @@ function worker(qrcode: string, socket: net.Socket) {
 
 ${qrcode}
 
-扫描上方二维码，发送暗号 "zixia" 可以加入宕机微信群~
+微信扫描上方二维码，发送暗号 "zixia" 可以加入宕机微信群~
 
   \n`)
 
