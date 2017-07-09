@@ -15,7 +15,7 @@ function registerSignals() {
     'SIGWINCH',
   ].map((sigName: NodeJS.Signals) => {
     process.on(sigName, function(){
-      log.info('main', 'Received signal %s', sigName)
+      log.info('main', 'Received signal %s, exiting...', sigName)
       process.exit(1)
     })
   });
