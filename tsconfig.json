@@ -23,8 +23,9 @@
     , "dist/"
   ]
   , "include": [
-       "bin/*.ts"
-     , "src/**/*.ts"
-     , "test/**/*.spec.ts"
+      "index.ts"
+    , "bin/*.ts"
+    , "src/**/*.ts"
+    , "test/**/*.spec.ts"
   ]
 }

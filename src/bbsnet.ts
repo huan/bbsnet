@@ -4,7 +4,6 @@ import * as net from 'net'
 import { log }   from 'brolog'
 import { generate } from 'qrcode-terminal'
 
-
 function worker(qrcode: string, socket: net.Socket) {
   socket.on('error', err => {
     log.error('bbsnet', 'socket error: %s', err.message || err)
@@ -17,26 +16,24 @@ function worker(qrcode: string, socket: net.Socket) {
     socket.localPort,
   )
 
-	socket.write(`
+  socket.write(`
 
 波若波罗蜜，zixia bbs down 机啦！
 
 ${qrcode}
 
-微信扫描上方二维码，发送暗号 "zixia" 可以加入宕机微信群~
+微信扫描上方二维码，发送暗号 "zixia" 可以加入宕机事宜讨论微信群哦~
 
   \n`)
 
   setTimeout(_ => socket.end(), 3 * 1000)
 }
 
-
 function showQrcode(qrcode) {
   return function(socket: net.Socket) {
     return worker(qrcode, socket)
   }
 }
-
 
 export async function bbsnet(port = 23): Promise<void> {
   return new Promise<void>((resolve, reject) => {

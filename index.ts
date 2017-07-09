@@ -4,9 +4,8 @@ log.timestamp(false)  // do not show timestamp in brolog
 import { bbsnet } from './src/bbsnet'
 import { web }    from './src/web'
 
-
 function registerSignals() {
-  ;[
+  ; [
     'SIGUSR1',
     'SIGINT',
     'SIGTERM',
@@ -19,9 +18,8 @@ function registerSignals() {
       log.info('main', 'Received signal %s, exiting...', sigName)
       process.exit(1)
     })
-  });
+  })
 }
-
 
 async function main(): Promise<void> {
   registerSignals()
@@ -33,10 +31,9 @@ async function main(): Promise<void> {
       web(),
     ])
     log.info('main', 'ready to go!')
-  } catch(e) {
+  } catch (e) {
     log.error('main', e.message || e)
   }
 }
-
 
 main()

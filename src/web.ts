@@ -1,7 +1,6 @@
 import { log }   from 'brolog'
 import * as express from 'express'
 
-
 function logger(
   req: express.Request,
   res: express.Response,
@@ -15,7 +14,6 @@ function logger(
   )
   next()
 }
-
 
 function showHtml(
   req: express.Request,
@@ -55,7 +53,6 @@ function showHtml(
 
   next()
 }
-
 
 export async function web(): Promise<void> {
   const app = express()
