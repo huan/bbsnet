@@ -3,18 +3,23 @@ import * as express from 'express'
 
 
 function logger(
-  req: express.Request, 
-  res: express.Response, 
+  req: express.Request,
+  res: express.Response,
   next: express.NextFunction,
 ) {
-  log.info('web', '%s %s', req.method, req.url)
+  log.info('web', 'from %s %s %s%s',
+    req.ip,
+    req.method,
+    req.hostname || '',
+    req.url,
+  )
   next()
 }
 
 
 function showHtml(
-  req: express.Request, 
-  res: express.Response, 
+  req: express.Request,
+  res: express.Response,
   next: express.NextFunction,
 ) {
   res.write(`
@@ -45,7 +50,7 @@ function showHtml(
   </html>
 
   \n`)
-  
+
   res.end()
 
   next()
