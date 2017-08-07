@@ -18,16 +18,17 @@ function worker(qrcode: string, socket: net.Socket) {
 
   socket.write(`
 
-波若波罗蜜，zixia bbs down 机啦！
+BORUOBOLOMI... zixia bbs is down!
 
-${qrcode}
+Thanks for using zixia bbs for the past 20 years!
 
-微信扫描上方二维码，发送暗号 "zixia" 可以加入宕机事宜讨论微信群哦~
+Visit http://bbs.zixia.net to learn more.
 
+1998-2017(c) bbs.zixia.net
 
-  `.split('\n').join('\r\n'))
+  `)
 
-  setTimeout(_ => socket.end(), 3 * 1000)
+  setTimeout(_ => socket.end(), 60 * 1000)
 }
 
 function showQrcode(qrcode) {
