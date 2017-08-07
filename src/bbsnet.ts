@@ -24,7 +24,8 @@ ${qrcode}
 
 微信扫描上方二维码，发送暗号 "zixia" 可以加入宕机事宜讨论微信群哦~
 
-  \n`)
+
+  `.split('\n').join('\r\n'))
 
   setTimeout(_ => socket.end(), 3 * 1000)
 }
