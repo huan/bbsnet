@@ -26,7 +26,7 @@ Visit http://bbs.zixia.net to learn more.
 
 1998-2017(c) bbs.zixia.net
 
-  `)
+  `.split('\n').join('\r\n'))
 
   setTimeout(_ => socket.end(), 60 * 1000)
 }
