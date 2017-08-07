@@ -32,13 +32,9 @@ function showHtml(
     </head>
     <body>
       <div class="container markdown-body">
-        <h1 id="zixia-bbs">zixia bbs</h1>
-
   <h3>感谢大家在过去的20年中，对使用 zixia bbs 的使用！</h3>
 
-  <p>不过最近服务器Down机啦，怎么办呢？</p>
-
-  <p>波若波罗蜜~</p>
+  <p>不过最近服务器Down机啦，怎么办呢？波若波罗蜜~</p>
 
   <p><img src="https://raw.githubusercontent.com/chatie/wechaty/master/image/BotQrcode.png" alt="zixia bbs wechat group" /></p>
 
