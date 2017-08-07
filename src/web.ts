@@ -38,7 +38,7 @@ function showHtml(
 
   <p><img src="https://raw.githubusercontent.com/chatie/wechaty/master/image/BotQrcode.png" alt="zixia bbs wechat group" /></p>
 
-  <p>微信扫描二维码，发送暗号”zixia”，加入 zixia Down 机群讨论吧~</p>
+  <p>微信扫描二维码（或直接添加好友 orangiss ），发送暗号”zixia”，加入 zixia Down 机群讨论吧~</p>
 
 
       </div>
