@@ -34,7 +34,7 @@ function showHtml(
       <div class="container markdown-body">
         <h1 id="zixia-bbs">zixia bbs</h1>
 
-  <h3>感谢大家在过去的20年中，对使用 zixia bbs 的喜爱！</h3>
+  <h3>感谢大家在过去的20年中，对使用 zixia bbs 的使用！</h3>
 
   <p>不过最近服务器Down机啦，怎么办呢？</p>
 
