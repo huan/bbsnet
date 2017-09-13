@@ -36,9 +36,10 @@ function showHtml(
 
   <p>不过最近服务器Down机啦，怎么办呢？波若波罗蜜~</p>
 
+  <p>扫描下方微信二维码，发送暗号”zixia”，加入 zixia Down 机群讨论吧~</p>
+
   <p><img src="https://chatie.io/wechaty/images/bot-qr-code.png" alt="zixia bbs wechat group" /></p>
 
-  <p>微信扫描二维码（或直接添加好友 orangiss ），发送暗号”zixia”，加入 zixia Down 机群讨论吧~</p>
 
 
   <p>1998-2017(c) bbs.zixia.net</p>
