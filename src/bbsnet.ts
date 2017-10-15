@@ -18,7 +18,7 @@ function worker(qrcode: string, socket: net.Socket) {
 
   socket.write(`
 
-BORUOBOLOMI... zixia bbs is down!
+BORUOBOLOMI... zixia bbs is down for months!
 
 Thanks for using zixia bbs for the past 20 years!
 
